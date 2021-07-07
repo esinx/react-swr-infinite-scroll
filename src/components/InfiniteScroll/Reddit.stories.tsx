@@ -1,31 +1,31 @@
-import React from 'react';
-import { useSWRInfinite } from 'swr';
-import InfiniteScroll from '.';
-import LoadingIndicator from './LoadingIndicator';
+import React from 'react'
+import { useSWRInfinite } from 'swr'
+import InfiniteScroll from '.'
+import LoadingIndicator from './LoadingIndicator'
 
 export default {
   title: 'InfiniteScroll/Reddit',
   component: InfiniteScroll,
-};
+}
 
 type RedditPost = {
-  subreddit: string;
-  author: string;
-  title: string;
-  thumbnail: string;
-  permalink: string;
-  url: string;
-};
+  subreddit: string
+  author: string
+  title: string
+  thumbnail: string
+  permalink: string
+  url: string
+}
 
 type RedditPostObject = {
-  kind: 't3';
-  data: RedditPost;
-};
+  kind: 't3'
+  data: RedditPost
+}
 
 type RedditDataResponse = {
-  after: string;
-  children: RedditPostObject[];
-};
+  after: string
+  children: RedditPostObject[]
+}
 
 const RedditPostCard: React.FC<{ post: RedditPost }> = ({ post }) => (
   <div
@@ -86,7 +86,7 @@ const RedditPostCard: React.FC<{ post: RedditPost }> = ({ post }) => (
       </div>
     </div>
   </div>
-);
+)
 
 export const Reddit = () => {
   const swr = useSWRInfinite<RedditDataResponse>(
@@ -100,7 +100,7 @@ export const Reddit = () => {
           .then((res) => res.json())
           .then((json) => json?.data),
     }
-  );
+  )
 
   return (
     <InfiniteScroll
@@ -112,5 +112,5 @@ export const Reddit = () => {
         response?.children?.map(({ data }) => <RedditPostCard post={data} key={data.permalink} />)
       }
     </InfiniteScroll>
-  );
-};
+  )
+}

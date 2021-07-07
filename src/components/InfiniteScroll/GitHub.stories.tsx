@@ -1,15 +1,15 @@
-import React from 'react';
-import { useSWRInfinite } from 'swr';
-import InfiniteScroll from '.';
-import LoadingIndicator from './LoadingIndicator';
+import React from 'react'
+import { useSWRInfinite } from 'swr'
+import InfiniteScroll from '.'
+import LoadingIndicator from './LoadingIndicator'
 
 export default {
   title: 'InfiniteScroll/GitHub',
   component: InfiniteScroll,
-};
+}
 
 export const GitHub: React.FC = () => {
-  const PAGE_SIZE = 5;
+  const PAGE_SIZE = 5
 
   const swr = useSWRInfinite(
     (index, prev) =>
@@ -19,7 +19,7 @@ export const GitHub: React.FC = () => {
     {
       fetcher: async (key) => fetch(key).then((res) => res.json()),
     }
-  );
+  )
 
   return (
     <InfiniteScroll
@@ -52,7 +52,7 @@ export const GitHub: React.FC = () => {
         ))
       }
     </InfiniteScroll>
-  );
-};
+  )
+}
 
-(GitHub as any).storyName = 'GitHub';
+;(GitHub as any).storyName = 'GitHub'

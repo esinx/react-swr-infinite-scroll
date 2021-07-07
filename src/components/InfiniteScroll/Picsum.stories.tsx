@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSWRInfinite } from 'swr';
-import InfiniteScroll from '.';
-import LoadingIndicator from './LoadingIndicator';
+import React from 'react'
+import { useSWRInfinite } from 'swr'
+import InfiniteScroll from '.'
+import LoadingIndicator from './LoadingIndicator'
 
 export default {
   title: 'InfiniteScroll/Picsum',
@@ -9,28 +9,28 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-};
+}
 
 type PicsumItem = {
-  id: string;
-  author: string;
-  width: number;
-  height: number;
-  url: string;
-  download_url: string;
-};
+  id: string
+  author: string
+  width: number
+  height: number
+  url: string
+  download_url: string
+}
 
-type PicsumResponse = PicsumItem[];
+type PicsumResponse = PicsumItem[]
 
 export const Picsum: React.FC = () => {
-  const PAGE_SIZE = 5;
+  const PAGE_SIZE = 5
 
   const swr = useSWRInfinite<PicsumResponse>(
     (index, prev) => `https://picsum.photos/v2/list?page=${index + 1}&limit=${PAGE_SIZE}`,
     {
       fetcher: async (key) => fetch(key).then((res) => res.json()),
     }
-  );
+  )
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
@@ -75,12 +75,12 @@ export const Picsum: React.FC = () => {
                   <div style={{ color: 'white', fontSize: '14px' }}>{item.url}</div>
                 </div>
               </div>
-            );
+            )
           })
         }
       </InfiniteScroll>
     </div>
-  );
-};
+  )
+}
 
-(Picsum as any).storyName = 'Picsum (Horizontal Scrolling)';
+;(Picsum as any).storyName = 'Picsum (Horizontal Scrolling)'
