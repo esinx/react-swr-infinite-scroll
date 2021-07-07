@@ -13,6 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/esinx/react-swr-infinite-scroll.git"
   },
+  "keywords": [
+    "react",
+    "swr",
+    "infinite scroll",
+    "hooks"
+  ],
   "scripts": {
     "build": "yarn clean; rollup -c",
     "clean": "rimraf dist",
