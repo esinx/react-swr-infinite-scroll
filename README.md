@@ -6,6 +6,10 @@
 
 SWR provides an amazing way to manage paged data through `useSWRInfinite`. But it's not as intuitive when it comes to implementing infinite scroll itself. `react-swr-infinite-scroll` attempts to solve this by implementing it for you. Using the `IntersectionObserver` API, it detects whether the viewport has reached the _end of the list view_ to decide if the data has to be reloaded.
 
+## Demo
+
+Visit the demo storybook [here](https://react-swr-infinite-scroll.vercel.app/).
+
 ## Features
 
 - Seamless useSWRInfinite integration
