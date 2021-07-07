@@ -52,7 +52,7 @@ const Component: React.FC = () => {
 type Props<T> = {
   swr: SWRInfiniteResponse<T>;
   children: React.ReactChild | ((item: T) => React.ReactNode);
-  loadingIndicator: React.ReactNode;
+  loadingIndicator?: React.ReactNode;
   endingIndicator?: React.ReactNode;
   isReachingEnd: boolean | ((swr: SWRInfiniteResponse<T>) => boolean);
   offset?: number;
@@ -61,8 +61,8 @@ type Props<T> = {
 
 - `swr`: pass your `useSWRInfinite` hook here
 - `children`: could either be a regular react child that uses the data from the original swr object itself, or a function that renders the list items passed from the `InfiniteScroll` component
-- `loadingIndicator`: A react node to be displayed when the list is loading
 - `isReachingEnd`: A function / boolean value to tell if the list is reaching its end (see examples for a better idea of how `isReachingEnd` should be implemented)
+- (optional) `loadingIndicator`: A react node to be displayed when the list is loading
 - (optional) `endingIndicator`: A react node to be displayed when the list is reaching its end
 - (optional) `offset`
   - if set to a positive value, the reload trigger will be called when the end of the list is behind the viewport
