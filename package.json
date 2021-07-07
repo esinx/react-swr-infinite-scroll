@@ -87,7 +87,7 @@
   },
   "release": {
     "branches": [
-      "master",
+      "main",
       "next"
     ],
     "preset": "conventionalcommits",
