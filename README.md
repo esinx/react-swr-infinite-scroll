@@ -144,7 +144,7 @@ Issues and pull requests are welcome! Feel free to leave any major/minor feedbac
 
 > It's MIT as usual
 
-Copyright 2012 Eunsoo Shin (esinx)
+Copyright 2021 Eunsoo Shin (esinx)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
