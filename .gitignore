@@ -6,6 +6,8 @@ node_modules
 .cache
 .env*
 
+/storybook
+
 /coverage
 
 # Ignore npm/yarn debug log
