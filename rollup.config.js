@@ -19,6 +19,7 @@ export default {
     {
       file: `./dist/${pkg.main}`,
       format: 'cjs',
+      exports: 'default',
       sourcemap: true,
     },
   ],

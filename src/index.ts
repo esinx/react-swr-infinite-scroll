@@ -1,1 +1,3 @@
-export * from './components'
+import InfiniteScroll from './components'
+
+export default InfiniteScroll
