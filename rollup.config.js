@@ -1,6 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
@@ -26,7 +25,6 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    postcss(),
     typescript({
       typescript: ts,
       tsconfig: 'tsconfig.json',
